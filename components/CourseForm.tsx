@@ -57,7 +57,11 @@ const CourseForm: React.FC<CourseFormProps> = ({
 
   const handleCourseCountChange = (count: number) => {
     if (count < 1) count = 1
+<<<<<<< HEAD
     if (count > 90) count = 90
+=======
+    if (count > 80) count = 80
+>>>>>>> 44ad1b1c647378e4b5be68d4e7d974f24ee7f87e
 
     setCourseCount(count)
 
