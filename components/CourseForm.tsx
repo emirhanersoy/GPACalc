@@ -22,12 +22,15 @@ const CourseForm: React.FC<CourseFormProps> = ({
   gradingSystem,
   selectedCalculation,
 }) => {
-  const [courseCount, setCourseCount] = useState<number>(5)
+  // Default kredi dağılımı: 3 tane 6 kredi, 1 tane 5 kredi, 1 tane 3 kredi, 2 tane 2 kredi
+  const defaultCredits = [6, 6, 6, 5, 3, 2, 2]
+  
+  const [courseCount, setCourseCount] = useState<number>(7)
   const [courses, setCourses] = useState<Course[]>(
-    Array.from({ length: 5 }, (_, index) => ({
+    Array.from({ length: 7 }, (_, index) => ({
       id: `course-${index}`,
       name: "",
-      credit: 6,
+      credit: defaultCredits[index] || 6,
       grade:
         gradingSystem === "turkish"
           ? "AA"
