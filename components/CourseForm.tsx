@@ -54,7 +54,7 @@ const CourseForm: React.FC<CourseFormProps> = ({
 
   const handleCourseCountChange = (count: number) => {
     if (count < 1) count = 1
-    if (count > 20) count = 20
+    if (count > 90) count = 90
 
     setCourseCount(count)
 
@@ -111,7 +111,7 @@ const CourseForm: React.FC<CourseFormProps> = ({
             <input
               type="number"
               min="1"
-              max="20"
+              max="90"
               value={courseCount}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 handleCourseCountChange(Number.parseInt(e.target.value) || 1)
